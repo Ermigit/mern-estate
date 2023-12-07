@@ -1,6 +1,6 @@
 
 const play =(req, res)=>{
 
-    res.send("this is a PLAY!");
+    res.send("Play ground! changed!");
 }
 export default play
