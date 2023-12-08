@@ -1,6 +1,7 @@
 import User from '../models/user.model.js'
 import bcryptjs from 'bcryptjs'
-const signup= async (req,res)=>{
+import errorHandler from '../utils/errorHandler.utils.js'
+const signup= async (req,res, next)=>{
 
  const {username, email, password} =req.body;
  const hashedPassword = bcryptjs.hashSync(password, 10);
@@ -10,7 +11,7 @@ try {
    res.status(201).json("You saved new user!");  // Find where this messese gone on the browser
    
 } catch (error) {
-   res.status(500).json("User Not created!");
+   next(error);
 }
 
 }
