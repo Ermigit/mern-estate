@@ -8,8 +8,11 @@ import playRouter from './routes/play.route.js'
 
 
 dotenv.config();
- mongoose.connect(process.env.MONGO).then(()=>{
+
+ mongoose.connect(process.env.MONGO)  
+   .then(()=>{
     console.log("You are connected to MongoDB!");
+
  }).catch((err)=>{
     console.log(err);
  });
@@ -17,8 +20,8 @@ dotenv.config();
 const app= express();
 app.use(express.json());
 
-app.listen(3000, ()=>{
- console.log('Server is running on port 3000!!!');
+app.listen(process.env.PORT, ()=>{
+ console.log(`Server is running on port ${process.env.PORT} ...`);
 });
 
 

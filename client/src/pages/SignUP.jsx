@@ -51,7 +51,7 @@ import { Link, useNavigate} from 'react-router-dom'
   console.log(formData);
   return (
     //learn more about tailwind class 'max-w-lg' 'mx-auto'  and more..
-    <div className='p-3 max-w-lg mx-auto'>
+    <div className='p-3 max-w-lg mx-auto '>
       <h1 className='text-3xl text-center font-semibold my-7'>Sign Up</h1>
       <form className='flex flex-col gap-4' onSubmit={formSubmitionHandler}>
   
