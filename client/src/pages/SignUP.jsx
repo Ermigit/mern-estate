@@ -2,8 +2,14 @@ import { useState } from 'react'
 import React from 'react'
 import { Link, useNavigate} from 'react-router-dom'
 
+ /**
+  * Function that handles the sign up process.
+  *
+  * @param {type} e - the event object
+  * @return {type} None
+  */
  function SignUp() {
- 
+  
   const [formData, setFormData] = useState({});
   const [error, setError]= useState(null);
   const [loading, setLoading]= useState(false);
@@ -51,7 +57,7 @@ import { Link, useNavigate} from 'react-router-dom'
   console.log(formData);
   return (
     //learn more about tailwind class 'max-w-lg' 'mx-auto'  and more..
-    <div className='p-3 max-w-lg mx-auto'>
+    <div className='p-3 max-w-lg mx-auto '>
       <h1 className='text-3xl text-center font-semibold my-7'>Sign Up</h1>
       <form className='flex flex-col gap-4' onSubmit={formSubmitionHandler}>
   
