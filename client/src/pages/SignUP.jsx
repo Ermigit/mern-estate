@@ -2,8 +2,14 @@ import { useState } from 'react'
 import React from 'react'
 import { Link, useNavigate} from 'react-router-dom'
 
+ /**
+  * Function that handles the sign up process.
+  *
+  * @param {type} e - the event object
+  * @return {type} None
+  */
  function SignUp() {
- 
+  
   const [formData, setFormData] = useState({});
   const [error, setError]= useState(null);
   const [loading, setLoading]= useState(false);
