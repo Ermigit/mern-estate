@@ -13,6 +13,7 @@ import { Link, useNavigate} from 'react-router-dom'
   const [formData, setFormData] = useState({});
   const [error, setError]= useState(null);
   const [loading, setLoading]= useState(false);
+  
  const navigate = useNavigate();
    const inputChangeHandler = (e)=>{
     setFormData({
@@ -49,7 +50,7 @@ import { Link, useNavigate} from 'react-router-dom'
         navigate('/');
 
       } catch (error) {
-        setLoading(false);
+        setLoading(true);
         setError(error.message);
       }
 
@@ -78,9 +79,10 @@ import { Link, useNavigate} from 'react-router-dom'
         </Link> <br/>
         {error && <p className='text-red-500'>{error}</p> }
 
+         
       </div>
     </div>
   )
-}
+  }
 
 export default SignIn
