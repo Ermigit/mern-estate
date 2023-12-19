@@ -3,6 +3,7 @@ import React from 'react'
 import { Link, useNavigate} from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { signInStart, signInSuccess, signInFailure } from '../redux/user/userSlice';
+import OAuth from '../component/OAuth';
 
 
  /**
@@ -65,7 +66,7 @@ import { signInStart, signInSuccess, signInFailure } from '../redux/user/userSli
         <button disabled={loading}
          className='bg-slate-700  text-white rounded-lg uppercase p-3 hover:opacity-95 disabled:opacity-80' >
           {loading ?'Loading...':'Sign In'}</button>
-
+        <OAuth/>  
       </form>
 
       <div className='flex gap-2  mt-5'> 
