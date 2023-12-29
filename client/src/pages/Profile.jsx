@@ -23,9 +23,9 @@ function Profile() {
   useEffect(()=>{
     if(file)
     {
-      handleFileUpload(file);
-      }
-    }, [file]);
+      handleFileUpload(file); 
+    }    
+    }, [file]); 
 
     const handleFileUpload = (file) => {
       const storage = getStorage(app);
