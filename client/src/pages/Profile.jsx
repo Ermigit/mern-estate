@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux';
 
 function Profile() {
   const fileRef = new useRef();
-  const {currentUser} = useSelector(state => state.user)
+  const {currentUser, loading, error } = useSelector(state => state.user)
   const [file, setFile] = useState(undefined) 
   const [fileperc, setFilePerc] = useState(0);
   const [fileUploadError, setFileUploadError] = useState(false);
@@ -128,9 +128,9 @@ function Profile() {
         onChange={handleChange}
         id="password" className='border p-3 rounded-lg'
        />
-       <button 
-       className='bg-slate-700 text-white rounded-lg p-3 uppercase hover: opacity-95 '>
-        update</button>
+       <button  disabled={loading}
+       className='bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-95'>
+       {loading? 'Loading...': 'update'}</button>
     </form>
     
      <div className='flex justify-between mt-5  '>
@@ -140,8 +140,10 @@ function Profile() {
       <span className='text-red-700 cursor-pointer'>
        Sign out
       </span>
+        
       </div> 
-
+    <p className='text-red-700'>{error? error: ''}</p>
+    <p className='text-green-700'>{updateSuccess? "User updated successfuly": ''}</p>
     </div>
   )
 }
