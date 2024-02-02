@@ -1,9 +1,7 @@
-import React from 'react'
+import express from "express";
+import play from '../controllers/play.controller.js'
 
-function About() {
-  return (
-    <div>About</div>
-  )
-}
+const router = express.Router();
 
-export default About
+router.get('/play', play);
+export default play

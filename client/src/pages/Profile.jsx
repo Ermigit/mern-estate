@@ -113,7 +113,7 @@ function Profile() {
         }
         dispatch(deleteUserSuccess(data.message));
       } catch (error) {
-        dispatch(deleteUserFailure(data.message));
+        dispatch(deleteUserFailure(error.message));
       }
         }
 
