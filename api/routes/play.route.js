@@ -1,7 +1,7 @@
 import express from "express";
-import play from '../controllers/play.controller.js'
+import user_p from '../controllers/user.controller.js'
 
 const router = express.Router();
 
-router.get('/play', play);
+router.get('/play', user_p);
 export default play
