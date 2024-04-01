@@ -5,7 +5,7 @@ import { app } from '../firebase';
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from "firebase/storage";
 import { deleteUserFailure, deleteUserStart, deleteUserSuccess, signOutUserFailure, signOutUserStart, signOutUserSuccess, updateUserFailure, updateUserStart, updateUserSuccess } from '../redux/user/userSlice';
 import { useDispatch } from 'react-redux';
-
+import { Link } from 'react-router-dom';
 function Profile() {
   const fileRef = new useRef();
   const {currentUser, loading, error } = useSelector(state => state.user)
@@ -165,6 +165,10 @@ function Profile() {
        <button  disabled={loading}
        className='bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-95'>
        {loading? 'Loading...': 'update'}</button>
+       
+       <Link to="/create-listing" className=" bg-green-700 text-white rounded-lg p-3 text-center uppercase hover:opacity-95">
+        Create Listing
+       </Link>
     </form>
     
      <div className='flex justify-between mt-5  '>
