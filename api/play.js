@@ -1,14 +1,12 @@
-const promise = new Promise((resolve, reject)=>{
-    const sum = 1+4;
-    if (sum==2)
-      resolve("yes")
-    else
-    reject("no")
-
+const P = new Promise((resolve,reject)=>{
+    const crealelistingMAX = 6
+    if (crealelistingMAX>6)
+        {resolve("you can create 6 listing")
+        }
+     else(reject("you can not create 6 listing"))   
 })
-
-promise.then((msg)=>{
-    console.log("message "+msg)
+P.then((msg)=>{
+    console.log(" message"+msg)
 })
 .catch((msg)=>{
     console.log("message "+msg)
